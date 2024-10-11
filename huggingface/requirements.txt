@@ -1,0 +1,9 @@
+langchain
+langchain_community
+torch
+transformers
+sentence-transformers
+datasets
+faiss-cpu
+streamlit
+langchain-huggingface

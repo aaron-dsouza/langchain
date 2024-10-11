@@ -1,0 +1,11 @@
+streamlit
+langchain
+langchain-openai
+langchainhub
+wikipedia
+numexpr
+chromadb
+pypdf
+docx2txt
+
+

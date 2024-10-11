@@ -27,7 +27,7 @@ if uploaded_file and add_file:
         f.write(bytes_data)
     loader = TextLoader(file_name) # to load text document 
     documents = loader.load() 
-    print(documents) # print to ensure document loaded correctly.
+    # print(documents) # print to ensure document loaded correctly.
 
     text_splitter = RecursiveCharacterTextSplitter(chunk_size=1000, chunk_overlap=200)
 
@@ -37,6 +37,7 @@ if uploaded_file and add_file:
     # st.write(chunks[1])
 
     embeddings = OpenAIEmbeddings()
+    # print("No of chunks: "+ str(len(chunks)))
     vector_store = Chroma.from_documents(chunks, embeddings)
 
     llm = ChatOpenAI(model='gpt-3.5-turbo', temperature=0)
