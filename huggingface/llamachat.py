@@ -5,6 +5,7 @@ from transformers import pipeline, AutoTokenizer, AutoModelForQuestionAnswering
 import json
 import streamlit as st
 
+# TODO Figure out the right model for question answering
 model_id = "meta-llama/Llama-3.2-1B"
 model_id = "deepset/roberta-base-squad2"
 tokenizer = AutoTokenizer.from_pretrained(model_id)
