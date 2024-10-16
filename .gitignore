@@ -1,2 +1,5 @@
-/huggingface/huggingface/
+/huggingface/huggingface
+/huggingface/chroma_db
 /openai/openai/
+/embeddings/chroma_db
+/ollama/chroma_db
