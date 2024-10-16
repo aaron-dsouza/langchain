@@ -97,6 +97,6 @@ prompt = st.text_input("Ask me something about the file:", key="prompt")
 if prompt:
     with st.spinner("Generating..."):
         chain = st.session_state.chain
-        question = {"question": prompt}
+        question = {"query": prompt}
         answer = chain.invoke(question)
         st.write(answer)
