@@ -31,6 +31,7 @@ with col2:
     st.title('Chat-o-box Llama')
  
 uploaded_file = st.file_uploader('Upload file: ', type=['pdf', 'docx', 'txt'])
+# TODO show a drop down for the user to select an existing file or upload a file
 col1,col2 = st.columns([1,3])
 with col1:
     add_file = st.button('Upload File', on_click=clear)
@@ -55,12 +56,6 @@ if uploaded_file and add_file:
     
     db = Chroma(persist_directory=persist_directory, embedding_function=embeddings)
     retriever = db.as_retriever()
-    # docs = retriever.get_relevant_documents("Which family did Romeo belong to")
-    # for i, doc in enumerate(docs, 1):
-    #     with st.expander(f"Document {i}"):
-    #         st.subheader("Content:")
-    #         st.write(doc.page_content)
-
 
     llm = OllamaLLM(model="llama3.2")
     
@@ -99,4 +94,9 @@ if prompt:
         chain = st.session_state.chain
         question = {"query": prompt}
         answer = chain.invoke(question)
-        st.write(answer)
+        st.write(answer['result'])
+        st.subheader("Source Documents")
+        for i, doc in enumerate(answer['source_documents'], 1):
+            with st.expander(f"Source {i}"):
+                st.write(f"Source: {doc.metadata['source']}")
+                st.text(doc.page_content)
