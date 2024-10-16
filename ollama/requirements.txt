@@ -7,3 +7,4 @@ datasets
 faiss-cpu
 streamlit
 langchain-huggingface
+langchain-ollama
