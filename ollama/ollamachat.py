@@ -1,6 +1,4 @@
 import streamlit as st
-from huggingface_hub import login
-from apikey import apikey
 import os 
 from langchain.chains import RetrievalQA
 from langchain_community.document_loaders import TextLoader 
@@ -12,7 +10,6 @@ from PIL import Image
 import chromadb
 
 os.environ["TOKENIZERS_PARALLELISM"] = "false"
-login(token=apikey, add_to_git_credential=True)
 
 def clear():
     if 'prompt' in st.session_state:
