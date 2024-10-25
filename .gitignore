@@ -3,3 +3,4 @@
 /openai/openai/
 /embeddings/chroma_db
 /ollama/chroma_db
+/servers
